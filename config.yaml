@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install Python3, pip3, and Java Open-JDK
+    package:
+      name:
+        - "{{ python3_package }}"
+        - "{{ java_package }}"
+      state: latest
+      update_cache: yes
